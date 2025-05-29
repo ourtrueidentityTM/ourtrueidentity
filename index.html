@@ -5,91 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ourtrueidentity™</title>
 
-  <!-- Importar Raleway 400 desde Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
+  <!-- Fuente Raleway -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
 
- <style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url('https://placeimg.com/1920/1080/tech');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  .content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px 20px;
-    border-radius: 12px;
-    max-width: 90vw;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  h1 {
-    margin: 0 0 15px 0;
-    font-size: 8vw; /* Escala según pantalla */
-    letter-spacing: 2px;
-  }
-
-  .button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 24px;
-    background-color: #ffffff;
-    color: #000000;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 6px;
-    font-size: 4.5vw; /* Escala también */
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .button:hover {
-    background-color: #000000;
-    color: #ffffff;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 2.8rem;
-    }
-
-    .button {
-      font-size: 1.1rem;
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://placeimg.com/1920/1080/tech');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
     }
 
     .content {
-      max-width: 400px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 30px 20px;
+      border-radius: 12px;
+      max-width: 90vw;
+      width: 100%;
+      box-sizing: border-box;
     }
-  }
-</style>
 
+    h1 {
+      margin: 0 0 15px 0;
+      font-size: 8vw;
+      letter-spacing: 2px;
+    }
+
+    input[type="email"] {
+      padding: 12px;
+      width: 80%;
+      max-width: 300px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border: none;
+    }
+
+    .button:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="content">
     <h1>ourtrueidentity™</h1>
-    <p>Deja tu correo para ser de los primeros en conocer nuestra próxima cápsula.</p>
-   <form action="https://formsubmit.co/el/pivawu" method="POST">
-  <input type="email" name="email" placeholder="Tu correo electrónico" required>
-  <br><br>
-  <button type="submit" class="button">Notificarme</button>
+    <p>Regístrate para conocer antes que nadie nuestra próxima cápsula.</p>
 
-  <!-- Configuración oculta -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://ourtrueidentitytm.github.io/ourtrueidentity/index.html">
-</form>
+    <form action="https://formsubmit.co/el/pivawu" method="POST">
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Tu correo electrónico" 
+        required 
+        pattern="[a-zA-Z0-9._%+-]+@(gmail|hotmail|outlook)\.com"
+      >
+      <br><br>
 
+      <button type="submit" class="button">REGÍSTRATE</button>
+
+      <!-- Configuración oculta -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Al eliminar _next, se queda en la misma página -->
+    </form>
   </div>
 </body>
 </html>
