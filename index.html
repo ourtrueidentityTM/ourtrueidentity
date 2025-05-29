@@ -55,7 +55,6 @@
       padding: 12px 24px;
       background-color: #ffffff;
       color: #000000;
-      text-decoration: none;
       font-weight: 700;
       border-radius: 6px;
       font-size: 1rem;
@@ -87,7 +86,7 @@
         name="email" 
         placeholder="Tu correo electrónico" 
         required 
-        pattern="[a-zA-Z0-9._%+-]+@(gmail|hotmail|outlook)\.com"
+        pattern="[a-zA-Z0-9._%+-]+@(gmail|hotmail|outlook)\\.com"
       >
       <br><br>
 
@@ -95,7 +94,7 @@
 
       <!-- Configuración oculta -->
       <input type="hidden" name="_captcha" value="false">
-      <!-- Al eliminar _next, se queda en la misma página -->
+      <input type="hidden" name="_next" value="">
     </form>
   </div>
 </body>
