@@ -79,7 +79,16 @@
 <body>
   <div class="content">
     <h1>ourtrueidentity™</h1>
-    <a href="#" class="button">Próximamente, déjame tu correo</a>
+    <p>Deja tu correo para ser de los primeros en conocer nuestra próxima cápsula.</p>
+    <form action="https://formsubmit.co/tu@email.com" method="POST">
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <br>
+      <button type="submit">Notificarme</button>
+
+      <!-- Opcionales de seguridad y redirección -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tuusuario.github.io/tu-repo/">
+    </form>
   </div>
 </body>
 </html>
