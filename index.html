@@ -8,56 +8,73 @@
   <!-- Importar Raleway 400 desde Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url('https://placeimg.com/1920/1080/tech');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: black;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 300;
-      text-align: center;
-    }
+ <style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://placeimg.com/1920/1080/tech');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-align: center;
+  }
 
-    .content {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px 40px;
-      border-radius: 12px;
-      max-width: 400px;
-      width: 90%;
-    }
+  .content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 90vw;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  h1 {
+    margin: 0 0 15px 0;
+    font-size: 8vw; /* Escala según pantalla */
+    letter-spacing: 2px;
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    font-size: 4.5vw; /* Escala también */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
     h1 {
-      margin: 0 0 15px 0;
       font-size: 2.8rem;
-      letter-spacing: 2px;
     }
 
     .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 28px;
-      background-color: #ffffff;
-      color: #000000;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 6px;
       font-size: 1.1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .button:hover {
-      background-color: #000000;
-      color: #ffffff;
+    .content {
+      max-width: 400px;
     }
-  </style>
+  }
+</style>
+
 </head>
 <body>
   <div class="content">
