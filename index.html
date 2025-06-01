@@ -11,6 +11,7 @@
     font-family: Arial, sans-serif;
     background: url('background2.jpg') no-repeat center center fixed;
     background-size: cover;
+    color: white;
   }
 
   /* Capa para filtro oscuro y traslucido */
@@ -22,9 +23,17 @@
     z-index: 0;
   }
 
-  /* Contenedor ventana flotante */
+  /* Contenido principal encima */
+  main {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding-top: 15vh;
+  }
+
+  /* Contenedor ventana flotante para formulario */
   .form-container {
-    display: none; /* Oculto al inicio */
+    display: none; /* oculto al inicio */
     position: relative;
     max-width: 400px;
     margin: 5% auto;
@@ -38,7 +47,7 @@
     z-index: 10;
   }
 
-  /* Título (comentado, no visible) */
+  /* Título (comentado para que no aparezca) */
   .form-container h2 {
     margin-bottom: 20px;
     font-weight: 700;
@@ -54,6 +63,11 @@
 </head>
 <body>
 
+<main>
+  <h1>Bienvenido a ourtrueidentity™</h1>
+  <p>Transformamos identidad en actitud.</p>
+</main>
+
 <div class="form-container" id="form-container">
   <!-- <h2>ÚNETE A NUESTRA IDENTIDAD</h2> -->
   <div class="ml-embedded" data-form="oqWKC0"></div>
@@ -67,7 +81,7 @@
   (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
   ml('account', '1563225');
 
-  // Mostrar el formulario después de 5 segundos
+  // Mostrar el formulario después de 10 segundos
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('form-container').style.display = 'block';
