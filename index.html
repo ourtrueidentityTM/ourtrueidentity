@@ -17,9 +17,10 @@
     }
 
     body {
-      background-image: url('background2.jpg.jpg'); /* asegúrate de que el archivo esté en el mismo directorio */
+      background-image: url('background2'); /* 👈 Este es el nombre que me diste */
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       position: relative;
     }
 
@@ -29,15 +30,16 @@
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* filtro translúcido negro, ajustable */
+      background-color: rgba(0, 0, 0, 0.5); /* Filtro translúcido */
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
+      text-align: center;
+      padding: 20px;
     }
 
     .content {
-      text-align: center;
       z-index: 2;
     }
   </style>
