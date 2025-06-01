@@ -6,9 +6,7 @@
   <title>Our True Identity</title>
   <style>
     body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+      margin: 0; padding: 0; height: 100%;
       font-family: Arial, sans-serif;
       background: url('background2.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -38,8 +36,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      max-width: 90%;
-      width: 100%;
+      width: 90%;
       max-height: 90vh;
       overflow-y: auto;
       padding: 30px 25px;
@@ -50,6 +47,7 @@
       -webkit-backdrop-filter: blur(10px);
       color: #fff;
       z-index: 10;
+      box-sizing: border-box;
     }
 
     .form-container.show {
@@ -57,44 +55,44 @@
       visibility: visible;
     }
 
+    /* Ajuste proporcional SOLO para escritorio */
+    @media (min-width: 768px) {
+      .form-container {
+        width: 450px; /* más estrecho, más proporcionado */
+        top: calc(50% + 1cm); /* un poco más abajo en escritorio */
+      }
+    }
+
     .ml-embedded {
       color: #000;
       background: transparent !important;
-      margin: 0 auto;
-    }
-
-    /* Ajuste SOLO para pantallas grandes: baja el modal 1cm */
-    @media (min-width: 601px) {
-      .form-container {
-        top: calc(50% + 1cm);
-      }
     }
   </style>
 </head>
 <body>
 
-  <main>
-    <h1>Bienvenido a ourtrueidentity™</h1>
-    <p>Transformamos identidad en actitud.</p>
-  </main>
+<main>
+  <h1>Bienvenido a ourtrueidentity™</h1>
+  <p>Transformamos identidad en actitud.</p>
+</main>
 
-  <div class="form-container" id="form-container">
-    <!-- <h2>ÚNETE A NUESTRA IDENTIDAD</h2> -->
-    <div class="ml-embedded" data-form="oqWKC0"></div>
-  </div>
+<div class="form-container" id="form-container">
+  <!-- <h2>ÚNETE A NUESTRA IDENTIDAD</h2> -->
+  <div class="ml-embedded" data-form="oqWKC0"></div>
+</div>
 
-  <script>
-    (function(w,d,e,u,f,l,n){
-      w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};
-      l=d.createElement(e),l.async=1,l.src=u;
-      n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);
-    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1563225');
+<!-- MailerLite Universal Script -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+  l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1563225');
 
-    window.addEventListener('load', () => {
-      document.getElementById('form-container').classList.add('show');
-    });
-  </script>
+  window.addEventListener('load', () => {
+    document.getElementById('form-container').classList.add('show');
+  });
+</script>
 
 </body>
 </html>
