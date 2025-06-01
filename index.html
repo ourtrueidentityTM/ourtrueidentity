@@ -24,6 +24,7 @@
 
   /* Contenedor ventana flotante */
   .form-container {
+    display: none; /* Oculto al inicio */
     position: relative;
     max-width: 400px;
     margin: 5% auto;
@@ -37,7 +38,7 @@
     z-index: 10;
   }
 
-  /* Título */
+  /* Título (comentado, no visible) */
   .form-container h2 {
     margin-bottom: 20px;
     font-weight: 700;
@@ -49,16 +50,12 @@
     color: #000;
     background: transparent !important;
   }
-
-  /* Botones y campos que MailerLite inserte puedes ajustarlos luego */
 </style>
 </head>
 <body>
 
-<div class="form-container">
-  <h2>ÚNETE A NUESTRA IDENTIDAD</h2>
-
-  <!-- Código embed MailerLite -->
+<div class="form-container" id="form-container">
+  <!-- <h2>ÚNETE A NUESTRA IDENTIDAD</h2> -->
   <div class="ml-embedded" data-form="oqWKC0"></div>
 </div>
 
@@ -69,6 +66,13 @@
   n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
   (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
   ml('account', '1563225');
+
+  // Mostrar el formulario después de 5 segundos
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('form-container').style.display = 'block';
+    }, 5000);
+  });
 </script>
 
 </body>
