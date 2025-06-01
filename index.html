@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Our True Identity</title>
-<style>
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: Arial, sans-serif;
-    background: url('background2.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top:0; left:0; right:0; bottom:0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-  }
-
-  main {
-    position: relative;
-    z-index: 5;
-    text-align: center;
-    padding-top: 15vh;
-  }
-
-  .form-container {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1.2s ease;
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 400px;
-    width: 90%;
-    padding: 30px 25px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #fff;
-    z-index: 10;
-  }
-
-  .form-container.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .ml-embedded {
-    color: #000;
-    background: transparent !important;
-  }
-
-  @media (max-width: 600px) {
-    .form-container {
-      transform: translate(-50%, -50%) scale(0.85);
-      transform-origin: center;
-      max-width: 100%;
-      padding: 20px 15px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our True Identity</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+      background: url('background2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
-  }
-</style>
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      padding-top: 15vh;
+    }
+
+    .form-container {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.2s ease;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 400px;
+      width: 90%;
+      padding: 30px 25px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      z-index: 10;
+    }
+
+    .form-container.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .ml-embedded {
+      color: #000;
+      background: transparent !important;
+    }
+
+    /* ESCALADO solo en dispositivos móviles */
+    @media (max-width: 600px) {
+      .form-container {
+        max-width: 95%;
+        padding: 20px 15px;
+      }
+
+      .ml-embedded {
+        zoom: 0.85;
+        -moz-transform: scale(0.85);
+        -moz-transform-origin: top left;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -80,14 +86,17 @@
 </div>
 
 <script>
+  // Carga MailerLite
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
   l=d.createElement(e),l.async=1,l.src=u,
   n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
   (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
   ml('account', '1563225');
 
+  // Muestra el formulario con efecto fadeIn inmediato
   window.addEventListener('load', () => {
-    document.getElementById('form-container').classList.add('show');
+    const form = document.getElementById('form-container');
+    form.classList.add('show');
   });
 </script>
 
