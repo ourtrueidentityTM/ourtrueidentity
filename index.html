@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our True Identity</title>
-  <style>
-    body, html {
-      margin: 0; padding: 0; height: 100%;
-      font-family: Arial, sans-serif;
-      background: url('background2.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      overflow: hidden;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our True Identity</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: Arial, sans-serif;
+    background: url('background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  }
+  main {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding-top: 15vh;
+  }
+  .form-container {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    z-index: 10;
+    box-sizing: border-box;
+  }
+  .form-container.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  .form-container h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .ml-embedded {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 600px) {
+    .form-container {
+      padding: 20px 15px;
+      max-width: 90vw;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    main {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      top: 10vh;
-    }
-
-    .form-modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 1s ease;
-      max-width: 400px;
-      width: 90%;
-      padding: 30px 25px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 5;
-      color: #fff;
-    }
-
-    .form-modal.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
     .ml-embedded {
-      background: transparent !important;
-      color: #000;
+      transform: scale(0.9);
+      transform-origin: center;
     }
-
-    /* Opcional: botón cerrar modal (puedes activarlo luego) */
-    /*
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    */
-  </style>
+  }
+</style>
 </head>
 <body>
 
@@ -80,13 +81,11 @@
   <p>Transformamos identidad en actitud.</p>
 </main>
 
-<div class="form-modal" id="form-modal">
+<div class="form-container" id="form-container">
   <!-- <h2>ÚNETE A NUESTRA IDENTIDAD</h2> -->
-  <!-- <button class="close-btn" onclick="cerrarModal()">×</button> -->
   <div class="ml-embedded" data-form="oqWKC0"></div>
 </div>
 
-<!-- MailerLite -->
 <script>
   (function(w,d,e,u,f,l,n){
     w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
@@ -94,18 +93,12 @@
     n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
   })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
   ml('account', '1563225');
-</script>
 
-<!-- Mostrar formulario con fade in sin retardo -->
-<script>
   window.addEventListener('load', () => {
-    document.getElementById('form-modal').classList.add('show');
+    setTimeout(() => {
+      document.getElementById('form-container').classList.add('show');
+    }, 0); // aparece inmediatamente con fade-in
   });
-
-  // Función para cerrar modal (si activas botón)
-  function cerrarModal() {
-    document.getElementById('form-modal').classList.remove('show');
-  }
 </script>
 
 </body>
