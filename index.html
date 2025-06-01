@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Our True Identity</title>
 <style>
-  /* Fondo full screen con imagen */
   body, html {
     margin: 0; padding: 0; height: 100%;
     font-family: Arial, sans-serif;
@@ -13,8 +12,6 @@
     background-size: cover;
     color: white;
   }
-
-  /* Capa para filtro oscuro y traslucido */
   body::before {
     content: "";
     position: fixed;
@@ -22,23 +19,21 @@
     background: rgba(0, 0, 0, 0.4);
     z-index: 0;
   }
-
-  /* Contenido principal encima */
   main {
     position: relative;
     z-index: 5;
     text-align: center;
     padding-top: 15vh;
   }
-
-  /* Contenedor ventana flotante para formulario */
   .form-container {
-    display: none; /* oculto al inicio */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease;
     position: relative;
     max-width: 400px;
     margin: 5% auto;
     padding: 30px 25px;
-    background: rgba(255 255 255 / 0.15); /* fondo traslúcido */
+    background: rgba(255 255 255 / 0.15);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
@@ -46,15 +41,15 @@
     color: #fff;
     z-index: 10;
   }
-
-  /* Título (comentado para que no aparezca) */
+  .form-container.show {
+    opacity: 1;
+    visibility: visible;
+  }
   .form-container h2 {
     margin-bottom: 20px;
     font-weight: 700;
     text-align: center;
   }
-
-  /* Ajustes del formulario embedido para mejor visibilidad */
   .ml-embedded {
     color: #000;
     background: transparent !important;
@@ -73,7 +68,6 @@
   <div class="ml-embedded" data-form="oqWKC0"></div>
 </div>
 
-<!-- Script universal MailerLite -->
 <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
   l=d.createElement(e),l.async=1,l.src=u,
@@ -81,11 +75,10 @@
   (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
   ml('account', '1563225');
 
-  // Mostrar el formulario después de 10 segundos
   window.addEventListener('load', () => {
     setTimeout(() => {
-      document.getElementById('form-container').style.display = 'block';
-    }, 5000);
+      document.getElementById('form-container').classList.add('show');
+    }, 3000);
   });
 </script>
 
